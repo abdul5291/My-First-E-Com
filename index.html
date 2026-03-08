@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* General Reset & Typography */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    gap: 15px;
+    background: #ffffff;
+    padding: 15px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+nav a button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+nav a button:hover {
+    color: #007bff;
+    background-color: #e7f1ff;
+    border-radius: 8px;
+}
+
+/* Product Grid */
+ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 25px;
+    padding: 0;
+    list-style: none;
+}
+
+/* Product Card */
+li div {
+    background: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+li div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+li h1 {
+    font-size: 1.25rem;
+    margin: 10px 0;
+    color: #222;
+}
+
+li p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    flex-grow: 1; /* Pushes buttons to the bottom */
+}
+
+/* Buttons Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+/* Specific Button Colors */
+button[name="cart"] {
+    background-color: #28a745;
+    color: white;
+}
+
+button[name="edit"] {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+form button[type="submit"] {
+    background-color: #dc3545;
+    color: white;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* Action Links */
+a {
+    text-decoration: none;
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/"><button>Home</button></a>
+    <a href="/create"><button>Create</button></a>
+    <a href="/cart"><button>Cart</button></a>
+  </nav>
+  
+  <ul>
+    {% for row in rows %}
+    <li>
+      <div>
+          <h1>{{ row[0] }}</h1>
+          <p>{{ row[1] }}</p>
+          
+          <form action="/delete/{{ row[2] }}" method="POST">
+              <button type="submit">Delete Product</button>
+          </form>
+          <a href="/update/{{ row['product_id'] }}">
+            <button name="edit">Edit Product</button>
+        </a>
+        <a href="/cart/{{row['product_id']}}">
+          <button name="cart">Cart</button>
+        </a>
+      </div>
+      </li>
+      {% endfor %}
+  </ul>
+
+</body>
+</html>
