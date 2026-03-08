@@ -8,6 +8,6 @@ To Run this project:-
 The Project is Created on sql queries and backend logic mainly
 
 Stack:-
->Frontend -> HTML, CSS, Copilot
->Backend -> Flask, Jinja
->DataBase -> Sqlite3
+1. Frontend -> HTML, CSS, Copilot
+2. Backend -> Flask, Jinja
+3. DataBase -> Sqlite3
