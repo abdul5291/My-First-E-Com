@@ -9,5 +9,5 @@ The Project is Created on sql queries and backend logic mainly
 
 Stack:-
 1. Frontend -> HTML, CSS, Copilot
-2. Backend -> Flask, Jinja
+2. Backend -> Python, Flask, Jinja
 3. DataBase -> Sqlite3
