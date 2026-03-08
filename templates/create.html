@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* Reuse General Styles */
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f8f9fa; /* Soft light grey */
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the form horizontally */
+}
+
+/* Navigation Bar (Same as Home) */
+nav {
+    display: flex;
+    gap: 15px;
+    background: #ffffff;
+    padding: 15px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    width: fit-content;
+}
+
+nav a button {
+    background: none;
+    border: none;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    padding: 8px 16px;
+    transition: all 0.3s ease;
+}
+
+nav a button:hover {
+    color: #007bff;
+    background-color: #e7f1ff;
+    border-radius: 8px;
+}
+
+/* Form Container Card */
+form {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 500px; /* Keeps form from stretching too wide */
+    border: 1px solid #eee;
+}
+
+/* Labels (The <p> tags) */
+form p {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Inputs and Textarea */
+input[type="text"], 
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 25px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    outline: none;
+}
+
+input[type="text"]:focus, 
+textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+/* Submit Button */
+form button {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+
+/* Action Links */
+a {
+    text-decoration: none;
+}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/"><button>Home</button></a>
+    <a href="/create"><button>Create</button></a>
+    <a href="/cart"><button>Cart</button></a>
+  </nav>
+ 
+  <form action="/create" method="POST">
+    <p>Title</p>
+    <input type="text" name="Title" id="">
+    <br>
+    <p>Content</p>
+    <textarea name="Content" id="" cols="30" rows="5">Product Content</textarea>
+    <br>
+    <button>Upload Product</button>
+  </form>
+
+</body>
+</html>
